@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:plant_app_ui/screens/flowering_plant.dart';
 import 'package:plant_app_ui/screens/green_plant.dart';
+import 'package:plant_app_ui/screens/indoor_plant.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -8,9 +10,11 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<Widget> widgets = [
-    GreenPlant(),
-    Container(color: Colors.blue),
-    Container(color: Colors.orange),
+    GreenPlant(Title: 'Green'),
+    indoor_plant(
+      Title: 'Indoor',
+    ),
+    flowering_plant(Title: 'flowering')
   ];
   int currentIndex = 0;
   @override
@@ -38,7 +42,7 @@ class _HomePageState extends State<HomePage> {
                   Spacer(),
                   buildMenuItem("Green Plant", 0),
                   buildMenuItem("Indoor Plant", 1),
-                  buildMenuItem("Shape Plant", 2),
+                  buildMenuItem("flowering Plant", 2),
                   Spacer(),
                   RotatedBox(
                     quarterTurns: -1,

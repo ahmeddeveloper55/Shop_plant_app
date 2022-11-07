@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:plant_app_ui/model/greenModel.dart';
+import 'package:plant_app_ui/model/indoormodel.dart';
 
-class DetailPage extends StatelessWidget {
-  final greenModel plant1;
+class indoor_Details extends StatelessWidget {
+  final indoormodel plant1;
 
-  const DetailPage({Key key, this.plant1}) : super(key: key);
+  const indoor_Details({Key key, this.plant1}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(

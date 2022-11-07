@@ -1,24 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:plant_app_ui/Provider/floweringProvider.dart';
 import 'package:plant_app_ui/Provider/greenProvider.dart';
+import 'package:plant_app_ui/model/FloweringModel.dart';
 import 'package:plant_app_ui/model/greenModel.dart';
 import 'package:plant_app_ui/screens/detail.dart';
+import 'package:plant_app_ui/screens/flowering_details.dart';
 import 'package:provider/provider.dart';
 
-class GreenPlant extends StatefulWidget {
+class flowering_plant extends StatefulWidget {
   final Title;
 
-  const GreenPlant({this.Title});
+  const flowering_plant({Key key, this.Title}) : super(key: key);
+
   @override
-  State<GreenPlant> createState() => _GreenPlantState();
+  State<flowering_plant> createState() => _flowering_plantState();
 }
 
-class _GreenPlantState extends State<GreenPlant> {
-  static List<greenModel> _list1 = [];
+class _flowering_plantState extends State<flowering_plant> {
+  static List<FloweringModel> _list1 = [];
   @override
   void initState() {
     super.initState();
-    final providermodel = Provider.of<greenProvider>(context, listen: false);
-    providermodel.getAllGreenPlants(_list1);
+    final providermodel =
+        Provider.of<floweringProvider>(context, listen: false);
+    providermodel.getAllFloweringPlants(_list1);
   }
 
   @override
@@ -56,7 +61,7 @@ class _GreenPlantState extends State<GreenPlant> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => DetailPage(
+                          builder: (_) => flowering_details(
                             plant1: _list1[index],
                           ),
                         ),

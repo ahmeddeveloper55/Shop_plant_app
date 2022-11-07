@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:plant_app_ui/model/FloweringModel.dart';
 import 'package:plant_app_ui/model/greenModel.dart';
 
-class DetailPage extends StatelessWidget {
-  final greenModel plant1;
+class flowering_details extends StatelessWidget {
+  final FloweringModel plant1;
 
-  const DetailPage({Key key, this.plant1}) : super(key: key);
+  const flowering_details({Key key, this.plant1}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
